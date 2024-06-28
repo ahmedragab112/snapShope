@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "140984852619",
+    "project_id": "snapshop-546c2",
+    "storage_bucket": "snapshop-546c2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:140984852619:android:97bf0408fc34d18853748e",
+        "android_client_info": {
+          "package_name": "com.example.newstore"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCuvRQE5krfV5HnNTFL87megPBaIQwFEnc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
