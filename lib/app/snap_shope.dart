@@ -3,6 +3,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:newstore/app/contictivity_controller.dart';
 import 'package:newstore/app/env.varables.dart';
+import 'package:newstore/config/router/app_routes.dart';
 import 'package:newstore/core/common/screen/no_network_screen.dart';
 import 'package:newstore/core/styles/fonts/font_family_helper.dart';
 import 'package:newstore/core/styles/fonts/font_weight_helper.dart';
@@ -32,41 +33,8 @@ class SnapShope extends StatelessWidget {
                   ),
                 );
               },
-              home: Scaffold(
-                body: Center(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        'hello',
-                        style: TextStyle(
-                            fontSize: 20.sp,
-                            fontFamily: FontFamilyHelper.poppinsEnglish,
-                            fontWeight: FontWeightHelper.regular),
-                      ),
-                      Text(
-                        'مرحبا',
-                        style: TextStyle(
-                            fontSize: 20.sp,
-                            fontFamily: FontFamilyHelper.cairoArabic,
-                            fontWeight: FontWeightHelper.regular),
-                      ),
-                      Text(
-                        'hello',
-                        style: TextStyle(
-                            fontSize: 20.sp,
-                            fontWeight: FontWeightHelper.regular),
-                      ),
-                      Text(
-                        'مرحبا',
-                        style: TextStyle(
-                            fontSize: 20.sp,
-                            fontWeight: FontWeightHelper.regular),
-                      )
-                    ],
-                  ),
-                ),
-              ),
+              initialRoute: AppRoutes.login,
+              onGenerateRoute: AppRouter.onGenerateRoutes,
             ),
           );
         } else {
