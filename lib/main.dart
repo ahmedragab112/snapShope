@@ -7,13 +7,15 @@ import 'package:newstore/firebase_options.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await EnvVarables.ins.init(envType: Env.prod);
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
+  await Future.wait([
+    EnvVarables.ins.init(envType: Env.prod),
+    Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform,
+    )
+  ]);
+
   SystemChrome.setPreferredOrientations(
-          [DeviceOrientation.portraitDown, DeviceOrientation.portraitUp])
-      .then((_) {
+      [DeviceOrientation.portraitDown, DeviceOrientation.portraitUp]).then((_) {
     runApp(
       const SnapShope(),
     );
