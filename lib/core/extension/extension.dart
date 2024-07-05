@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:newstore/core/extension/colors_theme.dart';
+import 'package:newstore/core/extension/image_extenstion.dart';
 
 extension NavigatorHelper on BuildContext {
+  MyColors get getColorTheme => Theme.of(this).extension<MyColors>()!;
+  MyImages get getImageTheme => Theme.of(this).extension<MyImages>()!;
   void push(Widget widget) {
     Navigator.push(
       this,
@@ -10,8 +14,6 @@ extension NavigatorHelper on BuildContext {
       ),
     );
   }
-
- 
 
   void pushNamed(String routeName, {Object? arguments}) {
     Navigator.pushNamed(this, routeName, arguments: arguments);

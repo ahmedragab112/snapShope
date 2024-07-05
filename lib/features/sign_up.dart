@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:newstore/config/extension/extension.dart';
+import 'package:newstore/core/extension/extension.dart';
 import 'package:newstore/config/router/app_routes.dart';
 
 class SignUp extends StatelessWidget {

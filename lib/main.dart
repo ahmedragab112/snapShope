@@ -15,8 +15,6 @@ void main() async {
       options: DefaultFirebaseOptions.currentPlatform,
     ),
     ScreenUtil.ensureScreenSize(),
-
-    
   ]);
 
   SystemChrome.setPreferredOrientations(
