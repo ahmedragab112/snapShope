@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:newstore/core/extension/extension.dart';
 import 'package:newstore/config/router/app_routes.dart';
@@ -20,10 +22,10 @@ class Login extends StatelessWidget {
           Center(
             child: GestureDetector(
                 onTap: () {
-                  context.pushNamed(AppRoutes.signUp);
+                  context.pushNamed(AppRoutes.signUp, arguments: 'hello');
                 },
                 child: Text(
-                  "Login",
+                  context.getText.helloWorld,
                   style: TextStyle(color: context.getColorTheme.mainColor),
                 )),
           ),

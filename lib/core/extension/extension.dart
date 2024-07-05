@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:newstore/core/extension/colors_theme.dart';
 import 'package:newstore/core/extension/image_extenstion.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 extension NavigatorHelper on BuildContext {
   MyColors get getColorTheme => Theme.of(this).extension<MyColors>()!;
   MyImages get getImageTheme => Theme.of(this).extension<MyImages>()!;
+ AppLocalizations get getText=>AppLocalizations.of(this)!;
   void push(Widget widget) {
     Navigator.push(
       this,

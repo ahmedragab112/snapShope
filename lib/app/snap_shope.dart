@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:newstore/app/contictivity_controller.dart';
 import 'package:newstore/app/env.varables.dart';
@@ -23,6 +25,9 @@ class SnapShope extends StatelessWidget {
             builder: (context, child) => MaterialApp(
               theme: LightMode.lightMode,
               darkTheme: DarkMode.darkTheme,
+              localizationsDelegates: AppLocalizations.localizationsDelegates,
+              supportedLocales: AppLocalizations.supportedLocales,
+              locale: const Locale('en'),
               themeMode: ThemeMode.light,
               debugShowCheckedModeBanner: EnvVarables.ins.type,
               builder: (context, widget) {
