@@ -9,7 +9,7 @@ class NoNetWork extends StatelessWidget {
     return Scaffold(
       body: Center(
         child: Image.asset(
-          AppImages.noInternet,
+          AppLightImages.noInternet,
           width: double.infinity,
           height: double.infinity,
           fit: BoxFit.fill,
