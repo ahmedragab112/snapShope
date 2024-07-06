@@ -27,7 +27,9 @@ void main() async {
       [DeviceOrientation.portraitDown, DeviceOrientation.portraitUp]).then((_) {
     runApp(
       BlocProvider(
-        create: (context) => AppControllerCubit(),
+        create: (context) => AppControllerCubit()
+          ..cashTheme()
+          ..cashLanguage(),
         child: const SnapShope(),
       ),
     );

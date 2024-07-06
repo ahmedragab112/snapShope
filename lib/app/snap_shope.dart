@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:newstore/app/contictivity_controller.dart';
@@ -27,14 +26,14 @@ class SnapShope extends StatelessWidget {
             builder: (context, child) =>
                 BlocBuilder<AppControllerCubit, AppControllerState>(
               builder: (context, state) {
-                var cubit=context.read<AppControllerCubit>();
+                var cubit = context.read<AppControllerCubit>();
                 return MaterialApp(
                   theme: LightMode.lightMode,
                   darkTheme: DarkMode.darkTheme,
                   localizationsDelegates:
                       AppLocalizations.localizationsDelegates,
                   supportedLocales: AppLocalizations.supportedLocales,
-                  locale:  Locale(cubit.languageCode),
+                  locale: Locale(cubit.languageCode),
                   themeMode: cubit.appTheme,
                   debugShowCheckedModeBanner: EnvVarables.ins.type,
                   builder: (context, widget) {
