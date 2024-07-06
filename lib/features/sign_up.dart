@@ -9,7 +9,6 @@ class SignUp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    log(ModalRoute.of(context)!.settings.arguments as String? ?? 'no data');
     return Scaffold(
       appBar: AppBar(
         title: const Text('sign up'),
