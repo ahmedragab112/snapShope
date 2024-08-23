@@ -66,6 +66,9 @@ flutter:
     - .env.prod
     - assets/images/core/
     - assets/images/icons/
+    - assets/icons/
+    - assets/images/admin/
+    - assets/images/customer/
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
   # For details regarding adding assets from package dependencies, see

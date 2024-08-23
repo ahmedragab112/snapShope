@@ -3,10 +3,7 @@ import 'package:flutter/material.dart';
 class BaseRoute extends PageRouteBuilder<dynamic> {
   BaseRoute({required this.page})
       : super(
-
-        
           pageBuilder: (
-
             BuildContext context,
             Animation<double> animation,
             Animation<double> secondaryAnimation,
@@ -27,7 +24,6 @@ class BaseRoute extends PageRouteBuilder<dynamic> {
             );
 
             return ScaleTransition(
-
               scale: tween.animate(caurvesanimation),
               child: widget,
             );
