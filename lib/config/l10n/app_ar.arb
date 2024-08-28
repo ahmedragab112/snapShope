@@ -7,6 +7,8 @@
     "validEmail":"قم ب ادخال حساب صحيح", 
     "passwordValid":"ادخل كلمه سر مناسبه", 
     "createAccount":"انشاء حساب جديد", 
-    "signUp":"تسجيل "
-
+    "signUp":"تسجيل ", 
+   "addYourInformation":"مرحبا من فضلك ادخل بياناتك",
+"fullName":"الاسم الكامل",
+"alreadyHaveAccount":"لديك حساب بالفعل ؟"
 }
