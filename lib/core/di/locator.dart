@@ -8,4 +8,5 @@ Future<void> setUpLocatore() async {
   locator.registerSingleton<CacheHelper>(CacheHelper());
   locator.registerSingleton<GlobalKey<NavigatorState>>(
       GlobalKey<NavigatorState>());
+
 }

@@ -1,4 +1,10 @@
 {
-    "helloWorld": "helloWorld"
-    
+    "language": "العربيه",
+    "login":"Login", 
+    "getStarted":"Welcome, Please Enter Your Email and get Started", 
+    "email":"Your Email", 
+    "password":"Password", 
+    "validEmail":"Please Enter A Valid Email", 
+    "passwordValid":"Enter password", 
+    "createAccount":"Create Account"
 }

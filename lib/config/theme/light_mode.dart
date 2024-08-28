@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:newstore/core/extension/colors_theme.dart';
+import 'package:newstore/core/extension/icon_theme.dart';
 import 'package:newstore/core/extension/image_extenstion.dart';
 import 'package:newstore/core/styles/colors/light_color.dart';
 import 'package:newstore/core/styles/fonts/font_family_helper.dart';
@@ -8,9 +9,24 @@ import 'package:newstore/core/styles/fonts/font_weight_helper.dart';
 
 class LightMode {
   static ThemeData lightMode = ThemeData(
-    brightness: Brightness.dark,
+    brightness: Brightness.light,
     primaryColor: LightColor.white,
-    extensions: const <ThemeExtension<dynamic>>[MyColors.light, MyAssets.light],
+    inputDecorationTheme: InputDecorationTheme(
+        border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(8.r),
+            borderSide: const BorderSide(width: 1, color: LightColor.pinkDark)),
+        focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(8.r),
+            borderSide: const BorderSide(width: 1, color: LightColor.pinkDark)),
+        enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(8.r),
+            borderSide:
+                const BorderSide(width: 1, color: LightColor.pinkDark))),
+    extensions: const <ThemeExtension<dynamic>>[
+      MyColors.light,
+      MyAssets.light,
+      MyIcons.light
+    ],
     useMaterial3: true,
     textTheme: TextTheme(
       bodyMedium: TextStyle(

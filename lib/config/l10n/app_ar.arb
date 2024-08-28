@@ -1,4 +1,12 @@
 {
-    "helloWorld": "مرحبا"
-    
+    "language": "English",
+    "login":"تسجيل الدخول", 
+    "getStarted":"مرحبا , ادخل حسابك وقم ب البدء", 
+    "email":"البريد الالكتروني", 
+    "password":"كلمه السر", 
+    "validEmail":"قم ب ادخال حساب صحيح", 
+    "passwordValid":"ادخل كلمه سر مناسبه", 
+    "createAccount":"انشاء حساب جديد", 
+    "signUp":"تسجيل "
+
 }

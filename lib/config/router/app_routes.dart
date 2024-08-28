@@ -1,7 +1,9 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:newstore/config/router/base_route.dart';
+import 'package:newstore/features/auth/presentation/manager/auth_bloc.dart';
 import 'package:newstore/features/auth/presentation/view/screens/login.dart';
 import 'package:newstore/features/auth/presentation/view/screens/sign_up.dart';
 
@@ -19,7 +21,11 @@ class AppRouter {
 
     switch (settings.name) {
       case AppRoutes.login:
-        return BaseRoute(page: const Login());
+        return BaseRoute(
+            page: BlocProvider(
+          create: (context) => AuthBloc(),
+          child: const Login(),
+        ));
       case AppRoutes.signUp:
         return BaseRoute(page: const SignUp());
       default:

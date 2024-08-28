@@ -43,7 +43,6 @@ class CacheHelper {
     return await _prefs.remove(key);
   }
 
-  // New method to set instance with dynamic type handling
   Future<bool> setInstance(
       {required String key, required dynamic value}) async {
     if (value is String) {
