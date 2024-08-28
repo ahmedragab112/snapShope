@@ -2,17 +2,15 @@ import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:newstore/app/manager/appcontroller_cubit.dart';
+import 'package:newstore/core/common/widget/custom_text_formfiled.dart';
 import 'package:newstore/core/extension/extension.dart';
-import 'package:newstore/config/router/app_routes.dart';
 import 'package:newstore/core/styles/style/app_text_style.dart';
+import 'package:newstore/features/auth/presentation/manager/auth_bloc.dart';
 import 'package:newstore/features/auth/presentation/view/widget/custom_button.dart';
 
-import '../../../../../app/manager/appcontroller_cubit.dart';
-import '../../../../../core/common/widget/custom_text_formfiled.dart';
-import '../../manager/auth_bloc.dart';
-
-class SignUp extends StatelessWidget {
-  const SignUp({super.key});
+class LoginBody extends StatelessWidget {
+  const LoginBody({super.key});
 
   @override
   Widget build(BuildContext context) {
