@@ -6,5 +6,9 @@
     "password":"Password", 
     "validEmail":"Please Enter A Valid Email", 
     "passwordValid":"Enter password", 
-    "createAccount":"Create Account"
+    "createAccount":"Create Account",
+    "signUp":"Sign Up", 
+    "addYourInformation":"Welcome, Please Add Your Information ",
+ "fullName":"Full Name",
+"alreadyHaveAccount":"Already Have Account ?"
 }
