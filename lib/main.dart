@@ -31,6 +31,7 @@ void main() async {
         create: (context) => AppControllerCubit()
           ..getLanguage()
           ..getTheme(),
+
         child: const SnapShope(),
       ),
     );
