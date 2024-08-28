@@ -71,4 +71,8 @@ class CacheHelper {
       throw ArgumentError("Unsupported default value type");
     }
   }
+
+  Future<void> clearAllData() async {
+    await _prefs.clear();
+  }
 }
