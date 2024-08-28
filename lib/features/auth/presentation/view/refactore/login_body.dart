@@ -1,8 +1,10 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:newstore/app/manager/appcontroller_cubit.dart';
+import 'package:newstore/config/router/app_routes.dart';
 import 'package:newstore/core/common/widget/custom_text_formfiled.dart';
 import 'package:newstore/core/extension/extension.dart';
 import 'package:newstore/core/styles/style/app_text_style.dart';
@@ -137,11 +139,14 @@ class LoginBody extends StatelessWidget {
                   ),
                 ),
                 30.verticalSpace,
-                Text(context.getText.createAccount,
-                    style: AppTextSyle.font12Black.copyWith(
-                        color: context.getColorTheme.bluePinkLight,
-                        fontSize: 20.sp,
-                        fontWeight: FontWeight.bold)),
+                GestureDetector(
+                  onTap: () => context.pushNamed(AppRoutes.signUp),
+                  child: Text(context.getText.createAccount,
+                      style: AppTextSyle.font12Black.copyWith(
+                          color: context.getColorTheme.bluePinkLight,
+                          fontSize: 20.sp,
+                          fontWeight: FontWeight.bold)),
+                ),
               ],
             ),
           ),
