@@ -5,7 +5,7 @@ part 'auth_event.dart';
 part 'auth_state.dart';
 
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
-  bool eye = true;
+  bool eye = false;
 
   AuthBloc() : super(AuthInitial()) {
     on<ChangeEyeEvent>(_changeEye);

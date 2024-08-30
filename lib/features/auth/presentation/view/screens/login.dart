@@ -11,7 +11,7 @@ class Login extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         bottomNavigationBar: CustomPaint(
-          size: Size(context.width, 150.h),
+          size: Size(context.width, 80.h),
           painter: AuthCustomPainter(
             gradient: LinearGradient(
               colors: [

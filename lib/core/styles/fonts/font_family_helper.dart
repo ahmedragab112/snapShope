@@ -1,5 +1,5 @@
-import 'package:newstore/core/cache/cache_helper.dart';
-import 'package:newstore/core/cache/cache_keys.dart';
+
+import 'package:newstore/core/cache/prefrence_repo.dart';
 import 'package:newstore/core/di/locator.dart';
 
 class FontFamilyHelper {
@@ -7,7 +7,7 @@ class FontFamilyHelper {
 
   static const String poppinsEnglish = 'Poppins';
   static String getFont() {
-    if (locator<CacheHelper>().getString(CacheKeys.languageKey) == 'en') {
+    if (locator<PreferencesRepository>().getPreferences(1)?.language == 'en') {
       return poppinsEnglish;
     }
     return cairoArabic;

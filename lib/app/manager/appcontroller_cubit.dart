@@ -1,8 +1,8 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
-import 'package:newstore/core/cache/cache_helper.dart';
-import 'package:newstore/core/cache/cache_keys.dart';
+import 'package:newstore/core/cache/objectbox_entity.dart';
+import 'package:newstore/core/cache/prefrence_repo.dart';
 
 import 'package:newstore/core/di/locator.dart';
 
@@ -29,12 +29,12 @@ class AppControllerCubit extends Cubit<AppControllerState> {
   Future<void> savingTheme(ThemeMode themeMode) async {
     String theme = themeMode == ThemeMode.dark ? 'dark' : 'light';
 
-    await locator<CacheHelper>().setString(CacheKeys.themeKey, theme);
+    locator<PreferencesRepository>()
+        .savePreferences(Preferences(id: 1, theme: theme));
   }
 
   String? getTheme() {
-    return locator<CacheHelper>().getString(CacheKeys.themeKey);
-
+    return locator<PreferencesRepository>().getPreferences(1)?.theme;
   }
 
   Future<void> cashTheme() async {
@@ -46,8 +46,8 @@ class AppControllerCubit extends Cubit<AppControllerState> {
 
   Future<void> saveLanguage(String lang) async {
     String language = lang == 'en' ? 'en' : 'ar';
-    await locator<CacheHelper>().setString(CacheKeys.languageKey, language);
-
+    locator<PreferencesRepository>()
+        .savePreferences(Preferences(id: 1, language: language));
   }
 
   Future<void> cashLanguage() async {
@@ -58,7 +58,6 @@ class AppControllerCubit extends Cubit<AppControllerState> {
   }
 
   String? getLanguage() {
-    return locator<CacheHelper>().getString(CacheKeys.languageKey);
-
+    return locator<PreferencesRepository>().getPreferences(1)?.language;
   }
 }
