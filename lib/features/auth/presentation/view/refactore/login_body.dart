@@ -131,7 +131,7 @@ class LoginBody extends StatelessWidget {
                       context.getText.login,
                       textAlign: TextAlign.center,
                       style: context.getTheme.bodyMedium!.copyWith(
-                        color: context.getColorTheme.textColor,
+                        color: Colors.white,
                         fontSize: 18.sp,
                         fontWeight: FontWeight.w600,
                       ),
