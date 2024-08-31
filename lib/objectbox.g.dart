@@ -20,64 +20,64 @@ export 'package:objectbox/objectbox.dart'; // so that callers only have to impor
 
 final _entities = <obx_int.ModelEntity>[
   obx_int.ModelEntity(
-      id: const obx_int.IdUid(1, 4136769240369754063),
+      id: const obx_int.IdUid(1, 8562784862204956978),
       name: 'Preferences',
-      lastPropertyId: const obx_int.IdUid(11, 5823573503151403325),
+      lastPropertyId: const obx_int.IdUid(11, 2055013104992674315),
       flags: 0,
       properties: <obx_int.ModelProperty>[
         obx_int.ModelProperty(
-            id: const obx_int.IdUid(1, 7298576750242691327),
+            id: const obx_int.IdUid(1, 4033050197179732466),
             name: 'id',
             type: 6,
             flags: 1),
         obx_int.ModelProperty(
-            id: const obx_int.IdUid(2, 2564764035305752386),
+            id: const obx_int.IdUid(2, 218499576868110542),
             name: 'tokenType',
             type: 9,
             flags: 0),
         obx_int.ModelProperty(
-            id: const obx_int.IdUid(3, 6004212513082920327),
+            id: const obx_int.IdUid(3, 4878092502374267516),
             name: 'token',
             type: 9,
             flags: 0),
         obx_int.ModelProperty(
-            id: const obx_int.IdUid(4, 8747023862093372666),
+            id: const obx_int.IdUid(4, 5640885364242665333),
             name: 'identity',
             type: 9,
             flags: 0),
         obx_int.ModelProperty(
-            id: const obx_int.IdUid(5, 5538667765775861981),
+            id: const obx_int.IdUid(5, 3080354194490962281),
             name: 'cookies',
             type: 9,
             flags: 0),
         obx_int.ModelProperty(
-            id: const obx_int.IdUid(6, 6041752930736553996),
-            name: 'cookiesMap',
-            type: 23,
-            flags: 0),
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(7, 5460091695335542471),
-            name: 'isOnboardingVisited',
-            type: 1,
-            flags: 0),
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(8, 3097786153875565344),
-            name: 'otp',
-            type: 9,
-            flags: 0),
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(9, 2016319666089929569),
-            name: 'phone',
-            type: 9,
-            flags: 0),
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(10, 7518022613539333854),
+            id: const obx_int.IdUid(6, 5685502201112252614),
             name: 'language',
             type: 9,
             flags: 0),
         obx_int.ModelProperty(
-            id: const obx_int.IdUid(11, 5823573503151403325),
+            id: const obx_int.IdUid(7, 8364147778245135541),
             name: 'theme',
+            type: 9,
+            flags: 0),
+        obx_int.ModelProperty(
+            id: const obx_int.IdUid(8, 855997960783354219),
+            name: 'cookiesMap',
+            type: 23,
+            flags: 0),
+        obx_int.ModelProperty(
+            id: const obx_int.IdUid(9, 6561788248130024058),
+            name: 'isOnboardingVisited',
+            type: 1,
+            flags: 0),
+        obx_int.ModelProperty(
+            id: const obx_int.IdUid(10, 7318350914067368987),
+            name: 'otp',
+            type: 9,
+            flags: 0),
+        obx_int.ModelProperty(
+            id: const obx_int.IdUid(11, 2055013104992674315),
+            name: 'phone',
             type: 9,
             flags: 0)
       ],
@@ -120,7 +120,7 @@ Future<obx.Store> openStore(
 obx_int.ModelDefinition getObjectBoxModel() {
   final model = obx_int.ModelInfo(
       entities: _entities,
-      lastEntityId: const obx_int.IdUid(1, 4136769240369754063),
+      lastEntityId: const obx_int.IdUid(1, 8562784862204956978),
       lastIndexId: const obx_int.IdUid(0, 0),
       lastRelationId: const obx_int.IdUid(0, 0),
       lastSequenceId: const obx_int.IdUid(0, 0),
@@ -152,6 +152,11 @@ obx_int.ModelDefinition getObjectBoxModel() {
               : fbb.writeString(object.identity!);
           final cookiesOffset =
               object.cookies == null ? null : fbb.writeString(object.cookies!);
+          final languageOffset = object.language == null
+              ? null
+              : fbb.writeString(object.language!);
+          final themeOffset =
+              object.theme == null ? null : fbb.writeString(object.theme!);
           final cookiesMapOffset = object.cookiesMap == null
               ? null
               : fbb.writeListInt8(object.cookiesMap!);
@@ -159,23 +164,18 @@ obx_int.ModelDefinition getObjectBoxModel() {
               object.otp == null ? null : fbb.writeString(object.otp!);
           final phoneOffset =
               object.phone == null ? null : fbb.writeString(object.phone!);
-          final languageOffset = object.language == null
-              ? null
-              : fbb.writeString(object.language!);
-          final themeOffset =
-              object.theme == null ? null : fbb.writeString(object.theme!);
           fbb.startTable(12);
           fbb.addInt64(0, object.id);
           fbb.addOffset(1, tokenTypeOffset);
           fbb.addOffset(2, tokenOffset);
           fbb.addOffset(3, identityOffset);
           fbb.addOffset(4, cookiesOffset);
-          fbb.addOffset(5, cookiesMapOffset);
-          fbb.addBool(6, object.isOnboardingVisited);
-          fbb.addOffset(7, otpOffset);
-          fbb.addOffset(8, phoneOffset);
-          fbb.addOffset(9, languageOffset);
-          fbb.addOffset(10, themeOffset);
+          fbb.addOffset(5, languageOffset);
+          fbb.addOffset(6, themeOffset);
+          fbb.addOffset(7, cookiesMapOffset);
+          fbb.addBool(8, object.isOnboardingVisited);
+          fbb.addOffset(9, otpOffset);
+          fbb.addOffset(10, phoneOffset);
           fbb.finish(fbb.endTable());
           return object.id;
         },
@@ -192,19 +192,19 @@ obx_int.ModelDefinition getObjectBoxModel() {
               .vTableGetNullable(buffer, rootOffset, 12);
           final cookiesMapParam =
               const fb.ListReader<int>(fb.Int8Reader(), lazy: false)
-                  .vTableGetNullable(buffer, rootOffset, 14);
+                  .vTableGetNullable(buffer, rootOffset, 18);
           final isOnboardingVisitedParam =
-              const fb.BoolReader().vTableGetNullable(buffer, rootOffset, 16);
+              const fb.BoolReader().vTableGetNullable(buffer, rootOffset, 20);
           final otpParam = const fb.StringReader(asciiOptimization: true)
-              .vTableGetNullable(buffer, rootOffset, 18);
+              .vTableGetNullable(buffer, rootOffset, 22);
           final phoneParam = const fb.StringReader(asciiOptimization: true)
-              .vTableGetNullable(buffer, rootOffset, 20);
+              .vTableGetNullable(buffer, rootOffset, 24);
           final tokenTypeParam = const fb.StringReader(asciiOptimization: true)
               .vTableGetNullable(buffer, rootOffset, 6);
           final languageParam = const fb.StringReader(asciiOptimization: true)
-              .vTableGetNullable(buffer, rootOffset, 22);
+              .vTableGetNullable(buffer, rootOffset, 14);
           final themeParam = const fb.StringReader(asciiOptimization: true)
-              .vTableGetNullable(buffer, rootOffset, 24);
+              .vTableGetNullable(buffer, rootOffset, 16);
           final object = Preferences(
               id: idParam,
               token: tokenParam,
@@ -247,27 +247,27 @@ class Preferences_ {
   static final cookies =
       obx.QueryStringProperty<Preferences>(_entities[0].properties[4]);
 
-  /// See [Preferences.cookiesMap].
-  static final cookiesMap =
-      obx.QueryByteVectorProperty<Preferences>(_entities[0].properties[5]);
-
-  /// See [Preferences.isOnboardingVisited].
-  static final isOnboardingVisited =
-      obx.QueryBooleanProperty<Preferences>(_entities[0].properties[6]);
-
-  /// See [Preferences.otp].
-  static final otp =
-      obx.QueryStringProperty<Preferences>(_entities[0].properties[7]);
-
-  /// See [Preferences.phone].
-  static final phone =
-      obx.QueryStringProperty<Preferences>(_entities[0].properties[8]);
-
   /// See [Preferences.language].
   static final language =
-      obx.QueryStringProperty<Preferences>(_entities[0].properties[9]);
+      obx.QueryStringProperty<Preferences>(_entities[0].properties[5]);
 
   /// See [Preferences.theme].
   static final theme =
+      obx.QueryStringProperty<Preferences>(_entities[0].properties[6]);
+
+  /// See [Preferences.cookiesMap].
+  static final cookiesMap =
+      obx.QueryByteVectorProperty<Preferences>(_entities[0].properties[7]);
+
+  /// See [Preferences.isOnboardingVisited].
+  static final isOnboardingVisited =
+      obx.QueryBooleanProperty<Preferences>(_entities[0].properties[8]);
+
+  /// See [Preferences.otp].
+  static final otp =
+      obx.QueryStringProperty<Preferences>(_entities[0].properties[9]);
+
+  /// See [Preferences.phone].
+  static final phone =
       obx.QueryStringProperty<Preferences>(_entities[0].properties[10]);
 }

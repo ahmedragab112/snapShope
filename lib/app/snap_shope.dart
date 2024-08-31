@@ -40,7 +40,7 @@ class SnapShope extends StatelessWidget {
                   locale: Locale(cubit.languageCode),
                   themeMode: cubit.appTheme,
                   debugShowCheckedModeBanner: EnvVarables.ins.type,
-                  navigatorKey: locator<GlobalKey<NavigatorState>>(),
+                  navigatorKey: sl<GlobalKey<NavigatorState>>(),
                   builder: (context, widget) {
                     return GestureDetector(
                       onTap: () =>

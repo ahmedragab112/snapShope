@@ -29,7 +29,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       ChangeUserImageEvent event, Emitter<AuthState> emit) async {
     emit(AuthInitial());
 
-    userProfile = await locator<PickImage>().galleryPick();
+    userProfile = await sl<PickImage>().galleryPick();
 
     emit(ChangeUserImage(userProfile));
   }

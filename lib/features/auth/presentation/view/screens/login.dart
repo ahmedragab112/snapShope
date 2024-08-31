@@ -1,5 +1,9 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:newstore/core/cache/store.dart';
+import 'package:newstore/core/di/locator.dart';
 import 'package:newstore/core/extension/extension.dart';
 import 'package:newstore/features/auth/presentation/view/widget/login/login_body.dart';
 import 'package:newstore/features/auth/presentation/view/widget/custom_auth_paint.dart';
@@ -10,19 +14,20 @@ class Login extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        bottomNavigationBar: CustomPaint(
-          size: Size(context.width, 80.h),
-          painter: AuthCustomPainter(
-            gradient: LinearGradient(
-              colors: [
-                context.getColorTheme.bluePinkLight!,
-                context.getColorTheme.bluePinkLight!,
-                context.getColorTheme.bluePinkLight!,
-                context.getColorTheme.bluePinkDark!,
-              ],
-            ),
+      bottomNavigationBar: CustomPaint(
+        size: Size(context.width, 80.h),
+        painter: AuthCustomPainter(
+          gradient: LinearGradient(
+            colors: [
+              context.getColorTheme.bluePinkLight!,
+              context.getColorTheme.bluePinkLight!,
+              context.getColorTheme.bluePinkLight!,
+              context.getColorTheme.bluePinkDark!,
+            ],
           ),
         ),
-        body: const LoginBody());
+      ),
+      body: const LoginBody(),
+    );
   }
 }

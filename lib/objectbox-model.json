@@ -4,71 +4,71 @@
   "_note3": "If you have VCS merge conflicts, you must resolve them according to ObjectBox docs.",
   "entities": [
     {
-      "id": "1:4136769240369754063",
-      "lastPropertyId": "11:5823573503151403325",
+      "id": "1:8562784862204956978",
+      "lastPropertyId": "11:2055013104992674315",
       "name": "Preferences",
       "properties": [
         {
-          "id": "1:7298576750242691327",
+          "id": "1:4033050197179732466",
           "name": "id",
           "type": 6,
           "flags": 1
         },
         {
-          "id": "2:2564764035305752386",
+          "id": "2:218499576868110542",
           "name": "tokenType",
           "type": 9
         },
         {
-          "id": "3:6004212513082920327",
+          "id": "3:4878092502374267516",
           "name": "token",
           "type": 9
         },
         {
-          "id": "4:8747023862093372666",
+          "id": "4:5640885364242665333",
           "name": "identity",
           "type": 9
         },
         {
-          "id": "5:5538667765775861981",
+          "id": "5:3080354194490962281",
           "name": "cookies",
           "type": 9
         },
         {
-          "id": "6:6041752930736553996",
-          "name": "cookiesMap",
-          "type": 23
-        },
-        {
-          "id": "7:5460091695335542471",
-          "name": "isOnboardingVisited",
-          "type": 1
-        },
-        {
-          "id": "8:3097786153875565344",
-          "name": "otp",
-          "type": 9
-        },
-        {
-          "id": "9:2016319666089929569",
-          "name": "phone",
-          "type": 9
-        },
-        {
-          "id": "10:7518022613539333854",
+          "id": "6:5685502201112252614",
           "name": "language",
           "type": 9
         },
         {
-          "id": "11:5823573503151403325",
+          "id": "7:8364147778245135541",
           "name": "theme",
+          "type": 9
+        },
+        {
+          "id": "8:855997960783354219",
+          "name": "cookiesMap",
+          "type": 23
+        },
+        {
+          "id": "9:6561788248130024058",
+          "name": "isOnboardingVisited",
+          "type": 1
+        },
+        {
+          "id": "10:7318350914067368987",
+          "name": "otp",
+          "type": 9
+        },
+        {
+          "id": "11:2055013104992674315",
+          "name": "phone",
           "type": 9
         }
       ],
       "relations": []
     }
   ],
-  "lastEntityId": "1:4136769240369754063",
+  "lastEntityId": "1:8562784862204956978",
   "lastIndexId": "0:0",
   "lastRelationId": "0:0",
   "lastSequenceId": "0:0",

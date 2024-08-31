@@ -1,5 +1,4 @@
-
-import 'package:newstore/core/cache/prefrence_repo.dart';
+import 'package:newstore/core/cache/store.dart';
 import 'package:newstore/core/di/locator.dart';
 
 class FontFamilyHelper {
@@ -7,7 +6,7 @@ class FontFamilyHelper {
 
   static const String poppinsEnglish = 'Poppins';
   static String getFont() {
-    if (locator<PreferencesRepository>().getPreferences(1)?.language == 'en') {
+    if (sl<ObjectBoxManager>().getPreferences().language == 'en') {
       return poppinsEnglish;
     }
     return cairoArabic;
