@@ -14,3 +14,9 @@ final class ChangeEye extends AuthState {
 
   const ChangeEye(this.eye);
 }
+
+final class ChangeUserImage extends AuthState {
+  final File? userProfile;
+
+  const ChangeUserImage(this.userProfile);
+}

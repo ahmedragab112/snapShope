@@ -10,6 +10,8 @@ import 'package:newstore/core/styles/fonts/font_weight_helper.dart';
 class DarkMode {
   static ThemeData darkTheme = ThemeData(
     brightness: Brightness.dark,
+    fontFamily: FontFamilyHelper.getFont(),
+    
     extensions: const <ThemeExtension<dynamic>>[
       MyColors.dark,
       MyAssets.dark,

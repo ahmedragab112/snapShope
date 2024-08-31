@@ -6,14 +6,23 @@ import 'package:newstore/config/router/app_routes.dart';
 import 'package:newstore/core/extension/extension.dart';
 import 'package:newstore/core/styles/style/app_text_style.dart';
 import 'package:newstore/features/auth/presentation/view/widget/custom_button.dart';
+import 'package:newstore/features/auth/presentation/view/widget/sign_up/signup_form.dart';
 import 'package:newstore/features/auth/presentation/view/widget/sign_up/signup_image.dart';
 
 import '../../../../../app/manager/appcontroller_cubit.dart';
-import '../../../../../core/common/widget/custom_text_formfiled.dart';
-import '../../manager/auth_bloc.dart';
 
-class SignUp extends StatelessWidget {
+class SignUp extends StatefulWidget {
   const SignUp({super.key});
+
+  @override
+  State<SignUp> createState() => _SignUpState();
+}
+
+class _SignUpState extends State<SignUp> {
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+  TextEditingController nameController = TextEditingController();
+  GlobalKey<FormState> formKey = GlobalKey();
 
   @override
   Widget build(BuildContext context) {
@@ -90,56 +99,23 @@ class SignUp extends StatelessWidget {
                 30.verticalSpace,
                 const SignupImage(),
                 30.verticalSpace,
-                FadeInLeft(
-                  child: CustomTextFormFild(
-                    controller: TextEditingController(),
-                    hintText: context.getText.fullName,
-                    padding:
-                        EdgeInsets.symmetric(horizontal: 8.w, vertical: 12.h),
-                    leadingIcon: const Icon(Icons.person),
-                  ),
-                ),
-                30.verticalSpace,
-                FadeInRight(
-                  child: CustomTextFormFild(
-                    controller: TextEditingController(),
-                    hintText: context.getText.email,
-                    padding:
-                        EdgeInsets.symmetric(horizontal: 8.w, vertical: 12.h),
-                    leadingIcon: const Icon(Icons.email),
-                  ),
-                ),
-                30.verticalSpace,
-                FadeInRight(
-                  child: BlocBuilder<AuthBloc, AuthState>(
-                    buildWhen: (previous, current) => current is ChangeEye,
-                    builder: (context, state) {
-                      return CustomTextFormFild(
-                        obscureText: context.read<AuthBloc>().eye,
-                        controller: TextEditingController(),
-                        hintText: context.getText.password,
-                        padding: EdgeInsets.symmetric(
-                            horizontal: 8.w, vertical: 12.h),
-                        leadingIcon: const Icon(Icons.lock),
-                        suffixIcon: GestureDetector(
-                          onTap: () =>
-                              context.read<AuthBloc>().add(ChangeEyeEvent()),
-                          child: Icon(
-                            context.read<AuthBloc>().eye == true
-                                ? Icons.visibility
-                                : Icons.visibility_off,
-                            color: context.getColorTheme.textColor,
-                          ),
-                        ),
-                      );
-                    },
-                  ),
+                SignupForm(
+                  emailController: emailController,
+                  passwordController: passwordController,
+                  fullNameController: nameController,
+                  formKey: formKey,
                 ),
                 30.verticalSpace,
                 FadeInUpBig(
                   child: CustomAuthButton(
                     width: double.infinity,
-                    onTap: () {},
+                    onTap: () {
+                      if (formKey.currentState!.validate()) {
+                        // context
+                        //     .read<AppControllerCubit>()
+                        //     .signUp(emailController.text, passwordController.text, nameController.text);
+                      }
+                    },
                     child: Text(
                       context.getText.signUp,
                       textAlign: TextAlign.center,

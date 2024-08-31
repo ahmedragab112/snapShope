@@ -10,6 +10,7 @@ import 'package:newstore/core/styles/fonts/font_weight_helper.dart';
 class LightMode {
   static ThemeData lightMode = ThemeData(
     brightness: Brightness.light,
+    fontFamily: FontFamilyHelper.getFont(),
     primaryColor: LightColor.white,
     inputDecorationTheme: InputDecorationTheme(
         border: OutlineInputBorder(

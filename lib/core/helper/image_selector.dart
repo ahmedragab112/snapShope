@@ -5,7 +5,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:permission_handler/permission_handler.dart';
 
 class PickImage {
-  static Future<File?> cameraPick() async {
+   Future<File?> cameraPick() async {
     var cameraImage = await ImagePicker().pickImage(source: ImageSource.camera);
     if (cameraImage != null) {
       return File(cameraImage.path);
@@ -13,7 +13,7 @@ class PickImage {
     return null;
   }
 
-  static Future<File?> galleryPick() async {
+   Future<File?> galleryPick() async {
     PermissionStatus status;
 
     if (Platform.isAndroid) {

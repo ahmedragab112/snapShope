@@ -8,3 +8,5 @@ sealed class AuthEvent extends Equatable {
 }
 
 class ChangeEyeEvent extends AuthEvent {}
+
+class ChangeUserImageEvent extends AuthEvent {}

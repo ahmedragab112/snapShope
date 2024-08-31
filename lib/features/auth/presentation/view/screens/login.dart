@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:newstore/core/extension/extension.dart';
-import 'package:newstore/features/auth/presentation/view/refactore/login_body.dart';
+import 'package:newstore/features/auth/presentation/view/widget/login/login_body.dart';
 import 'package:newstore/features/auth/presentation/view/widget/custom_auth_paint.dart';
 
 class Login extends StatelessWidget {

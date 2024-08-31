@@ -5,11 +5,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:newstore/app/manager/appcontroller_cubit.dart';
 import 'package:newstore/config/router/app_routes.dart';
-import 'package:newstore/core/common/widget/custom_text_formfiled.dart';
 import 'package:newstore/core/extension/extension.dart';
 import 'package:newstore/core/styles/style/app_text_style.dart';
-import 'package:newstore/features/auth/presentation/manager/auth_bloc.dart';
 import 'package:newstore/features/auth/presentation/view/widget/custom_button.dart';
+import 'package:newstore/features/auth/presentation/view/widget/login/login_form.dart';
 
 class LoginBody extends StatefulWidget {
   const LoginBody({super.key});
@@ -97,47 +96,16 @@ class _LoginBodyState extends State<LoginBody> {
                     ),
                   ),
                   30.verticalSpace,
-                  FadeInLeft(
-                    child: CustomTextFormFild(
-                      controller: emailController,
-                      type: TextInputType.emailAddress,
-                      hintText: context.getText.email,
-                      padding:
-                          EdgeInsets.symmetric(horizontal: 8.w, vertical: 12.h),
-                      leadingIcon: const Icon(Icons.email),
-                    ),
-                  ),
-                  30.verticalSpace,
-                  FadeInRight(
-                    child: BlocBuilder<AuthBloc, AuthState>(
-                      buildWhen: (previous, current) => current is ChangeEye,
-                      builder: (context, state) {
-                        return CustomTextFormFild(
-                          obscureText: context.read<AuthBloc>().eye,
-                          controller: passwordController,
-                          hintText: context.getText.password,
-                          padding: EdgeInsets.symmetric(
-                              horizontal: 8.w, vertical: 12.h),
-                          leadingIcon: const Icon(Icons.lock),
-                          suffixIcon: GestureDetector(
-                            onTap: () =>
-                                context.read<AuthBloc>().add(ChangeEyeEvent()),
-                            child: Icon(
-                              context.read<AuthBloc>().eye == true
-                                  ? Icons.visibility
-                                  : Icons.visibility_off,
-                              color: context.getColorTheme.textColor,
-                            ),
-                          ),
-                        );
-                      },
-                    ),
+                  LoginForm(
+                    emailController: emailController,
+                    passwordController: passwordController,
                   ),
                   30.verticalSpace,
                   CustomAuthButton(
                     width: double.infinity,
                     onTap: () {},
                     child: Animate(
+                      delay: const Duration(milliseconds: 500),
                       effects: const [FadeEffect(), ScaleEffect()],
                       child: Text(
                         context.getText.login,
