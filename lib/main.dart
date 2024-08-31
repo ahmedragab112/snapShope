@@ -15,8 +15,8 @@ import 'package:newstore/firebase_options.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await setUpLocatore();
   await Future.wait([
+    setUpLocatore(),
     EnvVarables.ins.init(envType: Env.prod),
     Firebase.initializeApp(
       options: DefaultFirebaseOptions.currentPlatform,
