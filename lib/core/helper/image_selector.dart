@@ -1,48 +1,55 @@
-import 'dart:developer';
-import 'dart:io';
-import 'package:device_info_plus/device_info_plus.dart';
-import 'package:image_picker/image_picker.dart';
-import 'package:permission_handler/permission_handler.dart';
 
-class PickImage {
-   Future<File?> cameraPick() async {
-    var cameraImage = await ImagePicker().pickImage(source: ImageSource.camera);
-    if (cameraImage != null) {
-      return File(cameraImage.path);
+import 'dart:io';
+
+import 'package:image_picker/image_picker.dart';
+
+class ImageSelector {
+  factory ImageSelector() => _instance;
+
+  ImageSelector._();
+
+  static final _instance = ImageSelector._();
+
+  final ImagePicker _picker = ImagePicker();
+
+  // select single image
+  Future<File?> showSelectImageDialog(
+      {ImageSource source = ImageSource.gallery, int quality = 50}) async {
+    final XFile? pickedFile =
+        await _picker.pickImage(source: source, imageQuality: quality);
+    if (pickedFile != null) {
+      return File(pickedFile.path);
     }
     return null;
   }
 
-   Future<File?> galleryPick() async {
-    PermissionStatus status;
-
-    if (Platform.isAndroid) {
-      final androidInfo = await DeviceInfoPlugin().androidInfo;
-
-      if (androidInfo.version.sdkInt <= 32) {
-        status = await Permission.storage.request();
-      } else {
-        status = await Permission.photos.request();
-      }
-    } else {
-      // Request appropriate permission for iOS
-      status = await Permission.photos.request();
+// select multiple images
+  Future<List<File>?> showSelectImagesDialog({int quality = 50}) async {
+    final List<XFile> pickedFiles =
+        await _picker.pickMultiImage(imageQuality: quality);
+    if (pickedFiles.isNotEmpty) {
+      return pickedFiles.map((e) => File(e.path)).toList();
     }
+    return null;
+  }
 
-    if (status.isGranted) {
-      var image = await ImagePicker().pickImage(source: ImageSource.gallery);
-      if (image != null) {
-        return File(image.path);
-      }
+  // select video
+  Future<File?> showSelectVideoDialog(
+      {ImageSource source = ImageSource.gallery}) async {
+    final XFile? pickedFile = await _picker.pickVideo(source: source);
+    if (pickedFile != null) {
+      return File(pickedFile.path);
     }
+    return null;
+  }
 
-    // Handle the case where permission is denied
-    if (status.isDenied || status.isPermanentlyDenied) {
-      // Optionally, guide the user to settings
-      log(
-          "Permission denied. Please enable access to the gallery in settings.");
+  // select multiple videos
+  Future<List<File>?> showSelectVideosDialog(
+      {ImageSource source = ImageSource.gallery}) async {
+    final List<XFile> pickedFiles = await _picker.pickMultipleMedia();
+    if (pickedFiles.isNotEmpty) {
+      return pickedFiles.map((e) => File(e.path)).toList();
     }
-
     return null;
   }
 }

@@ -13,7 +13,7 @@ Future<void> setUpLocatore() async {
   // Register the ObjectBoxManager as a singleton
   sl.registerSingleton<ObjectBoxManager>(objectBoxManager);
 
-  sl.registerSingleton<PickImage>(PickImage());
+  sl.registerSingleton<ImageSelector>(ImageSelector());
   sl.registerSingleton<GlobalKey<NavigatorState>>(GlobalKey<NavigatorState>());
   sl.registerFactory<AppControllerCubit>(() => AppControllerCubit());
   sl.registerFactory<AuthBloc>(() => AuthBloc());

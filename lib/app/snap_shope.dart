@@ -43,17 +43,9 @@ class SnapShope extends StatelessWidget {
                   navigatorKey: sl<GlobalKey<NavigatorState>>(),
                   builder: (context, widget) {
                     return GestureDetector(
-                      onTap: () =>
-                          FocusManager.instance.primaryFocus!.unfocus(),
-                      child: Scaffold(
-                        body: Builder(
-                          builder: (context) {
-                            ConactivityController.instance.init();
-                            return widget!;
-                          },
-                        ),
-                      ),
-                    );
+                        onTap: () =>
+                            FocusManager.instance.primaryFocus!.unfocus(),
+                        child: widget!);
                   },
                   initialRoute: getInitRoute(),
                   onGenerateRoute: AppRouter.onGenerateRoutes,

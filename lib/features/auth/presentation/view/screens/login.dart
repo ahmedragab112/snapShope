@@ -1,9 +1,6 @@
-import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:newstore/core/cache/store.dart';
-import 'package:newstore/core/di/locator.dart';
 import 'package:newstore/core/extension/extension.dart';
 import 'package:newstore/features/auth/presentation/view/widget/login/login_body.dart';
 import 'package:newstore/features/auth/presentation/view/widget/custom_auth_paint.dart';
