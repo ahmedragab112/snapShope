@@ -1,4 +1,6 @@
 class AppLightImages {
+  static const String onboarding1 = 'assets/images/core/onboarding1.png';
+  static const String onboarding2 = 'assets/images/core/onboarding2.png';
   static const String noInternet = 'assets/images/core/no_network.jpg';
   static const String lightImage = 'assets/images/core/light.jpg';
   //Images

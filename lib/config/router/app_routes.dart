@@ -8,6 +8,8 @@ import 'package:newstore/features/auth/presentation/manager/auth_bloc.dart';
 import 'package:newstore/features/auth/presentation/view/screens/login.dart';
 import 'package:newstore/features/auth/presentation/view/screens/sign_up.dart';
 import 'package:newstore/features/auth/test.dart';
+import 'package:newstore/features/onboarding/manager/onboarding_cubit.dart';
+import 'package:newstore/features/onboarding/view/onboarding_view.dart';
 
 class AppRoutes {
   static const String homeAdmine = '/homeAdmine';
@@ -15,6 +17,7 @@ class AppRoutes {
   static const String login = '/login';
   static const String dashboard = '/dashboard';
   static const String signUp = '/signUp';
+  static const String onboarding = '/onboardingView';
 }
 
 class AppRouter {
@@ -37,6 +40,13 @@ class AppRouter {
         ));
       case AppRoutes.dashboard:
         return BaseRoute(page: const Test());
+      case AppRoutes.onboarding:
+        return BaseRoute(
+            page: BlocProvider(
+          create: (context) => OnboardingCubit(),
+          child: const OnBoardingView(),
+        ));
+
       default:
         return BaseRoute(page: const Scaffold());
     }

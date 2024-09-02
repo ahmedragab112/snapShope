@@ -18,5 +18,5 @@ String? getInitRoute() {
   }
 
   // Default to dashboard
-  return AppRoutes.dashboard;
+  return AppRoutes.onboarding;
 }
