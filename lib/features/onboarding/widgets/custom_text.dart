@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:newstore/core/cache/store.dart';
 import 'package:newstore/core/di/locator.dart';
 import 'package:newstore/core/extension/extension.dart';
-import 'package:newstore/core/strings/app_strings.dart';
 
 import '../../../config/router/app_routes.dart';
 

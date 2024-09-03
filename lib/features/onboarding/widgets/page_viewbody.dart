@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:newstore/core/styles/spaceing/spaceing.dart';
 import 'package:newstore/core/styles/style/app_text_style.dart';
 import 'package:newstore/features/onboarding/model/page_view_model.dart';
