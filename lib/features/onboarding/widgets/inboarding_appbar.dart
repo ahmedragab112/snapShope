@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:newstore/config/router/app_routes.dart';
 import 'package:newstore/core/cache/store.dart';
 import 'package:newstore/core/di/locator.dart';
@@ -15,31 +16,36 @@ class InBoardingAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        BlocBuilder<OnboardingCubit, OnboardingState>(
-          builder: (context, state) {
-            var bloc = context.read<OnboardingCubit>();
-            return RichText(
-                text: TextSpan(children: [
-              TextSpan(
-                  text: '${bloc.index + 1}', style: AppTextSyle.font12Black),
-              TextSpan(text: '/3', style: AppTextSyle.font12Black),
-            ]));
-          },
+    return Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+      BlocBuilder<OnboardingCubit, OnboardingState>(
+        builder: (context, state) {
+          var bloc = context.read<OnboardingCubit>();
+          return RichText(
+              text: TextSpan(children: [
+            TextSpan(
+              text: '${bloc.index + 1}',
+              style: AppTextSyle.font12Black.copyWith(
+                  fontSize: 20.sp, color: context.getColorTheme.textColor),
+            ),
+            TextSpan(
+                text: '/3',
+                style: AppTextSyle.font12Black.copyWith(
+                    fontSize: 20.sp,
+                    color: context.getColorTheme.bluePinkLight)),
+          ]));
+        },
+      ),
+      GestureDetector(
+        onTap: () async {
+          sl<ObjectBoxManager>().updateIsOnboardingVisited(true);
+          context.pushReplacementNamed(AppRoutes.login);
+        },
+        child: Text(
+          AppStrings.skip,
+          style: AppTextSyle.font12Black.copyWith(
+              fontSize: 20.sp, color: context.getColorTheme.bluePinkLight),
         ),
-        GestureDetector(
-          onTap: () async {
-            sl<ObjectBoxManager>().updateIsOnboardingVisited(true);
-            context.pushReplacementNamed(AppRoutes.login);
-          },
-          child: const Text(
-            AppStrings.skip,
-            style: TextStyle(color: Colors.black),
-          ),
-        )
-      ],
-    );
+      ),
+    ]);
   }
 }

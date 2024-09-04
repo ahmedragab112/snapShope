@@ -47,7 +47,8 @@ class SnapShope extends StatelessWidget {
                             FocusManager.instance.primaryFocus!.unfocus(),
                         child: widget!);
                   },
-                  initialRoute: getInitRoute(),
+                  // initialRoute: getInitRoute(),
+                  initialRoute: AppRoutes.onboarding,
                   onGenerateRoute: AppRouter.onGenerateRoutes,
                 );
               },

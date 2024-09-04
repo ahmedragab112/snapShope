@@ -6,7 +6,6 @@ import 'package:newstore/features/onboarding/manager/onboarding_cubit.dart';
 import 'package:newstore/features/onboarding/widgets/custom_text.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-
 class NextAndPrevPage extends StatelessWidget {
   const NextAndPrevPage({super.key});
 
@@ -30,16 +29,16 @@ class NextAndPrevPage extends StatelessWidget {
               controller: bloc.controller,
               count: bloc.pages.length,
               textDirection: TextDirection.ltr,
-              effect: ExpandingDotsEffect(
-                  dotColor:Colors.grey,
-                  activeDotColor: context.getColorTheme.bluePinkDark!,
-                  dotHeight: 10.h,
-                  dotWidth: 10.w),
+              effect: WormEffect(
+                  dotColor: context.getColorTheme.textColor!,
+                  activeDotColor: context.getColorTheme.bluePinkLight!,
+                  dotHeight: 8.h,
+                  dotWidth: 40.w),
             ),
             CustomText(
               index: bloc.index,
               controller: bloc.controller,
-              text: 'prev',
+              text: 'Prev',
             )
           ],
         );

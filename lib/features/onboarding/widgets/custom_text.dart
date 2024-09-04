@@ -34,7 +34,7 @@ class CustomText extends StatelessWidget {
       child: Text(
         nextPage
             ? index != 2
-                ? 'next'
+                ? 'Next'
                 : 'Get Started'
             : text,
         style: Theme.of(context).textTheme.bodyMedium,

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:newstore/core/extension/extension.dart';
 import 'package:newstore/core/styles/spaceing/spaceing.dart';
 import 'package:newstore/core/styles/style/app_text_style.dart';
 import 'package:newstore/features/onboarding/model/page_view_model.dart';
 import 'package:newstore/features/onboarding/widgets/next_and_prev_page.dart';
-
 
 class PageViewBody extends StatelessWidget {
   const PageViewBody({
@@ -24,14 +24,14 @@ class PageViewBody extends StatelessWidget {
           fit: BoxFit.fill,
         ),
         const VerticalSpace(15),
-        Text(
-          data.title,
-          style: AppTextSyle.font12Black
-        ),
+        Text(data.title,
+            style: AppTextSyle.font12Black.copyWith(
+                color: context.getColorTheme.bluePinkLight, fontSize: 22.sp)),
         const VerticalSpace(10),
         Text(
           data.description,
-          style: AppTextSyle.font12Black,
+          style: AppTextSyle.font12Black.copyWith(
+              color: context.getColorTheme.textColor, fontSize: 18.sp),
           textAlign: TextAlign.center,
           maxLines: 3,
           overflow: TextOverflow.clip,

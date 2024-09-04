@@ -5,7 +5,6 @@ import 'package:newstore/core/strings/app_strings.dart';
 import 'package:newstore/core/styles/images/app_images.dart';
 import 'package:newstore/features/onboarding/model/page_view_model.dart';
 
-
 part 'onboarding_state.dart';
 part 'onboarding_cubit.freezed.dart';
 
@@ -26,7 +25,7 @@ class OnboardingCubit extends Cubit<OnboardingState> {
     PageViewModel(
       title: AppStrings.getYourOrder,
       description: AppStrings.onBoarding3Description,
-      image: AppLightImages.onboarding1,
+      image: AppLightImages.onboarding2,
     )
   ];
   OnboardingCubit() : super(const OnboardingState.initial());
