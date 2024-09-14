@@ -17,6 +17,6 @@ String? getInitRoute() {
     return AppRoutes.login;
   }
 
-  // Default to dashboard
+  // Default to onboarding
   return AppRoutes.onboarding;
 }

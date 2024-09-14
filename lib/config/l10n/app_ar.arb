@@ -1,14 +1,25 @@
 {
     "language": "English",
-    "login":"تسجيل الدخول", 
-    "getStarted":"مرحبا , ادخل حسابك وقم ب البدء", 
-    "email":"البريد الالكتروني", 
-    "password":"كلمه السر", 
-    "validEmail":"قم ب ادخال حساب صحيح", 
-    "passwordValid":"ادخل كلمه سر مناسبه", 
-    "createAccount":"انشاء حساب جديد", 
-    "signUp":"تسجيل ", 
-   "addYourInformation":"مرحبا من فضلك ادخل بياناتك",
-"fullName":"الاسم الكامل",
-"alreadyHaveAccount":"لديك حساب بالفعل ؟"
+    "login": "تسجيل الدخول",
+    "getStarted": "مرحبا , ادخل حسابك وقم ب البدء",
+    "email": "البريد الالكتروني",
+    "password": "كلمه السر",
+    "validEmail": "قم ب ادخال حساب صحيح",
+    "passwordValid": "ادخل كلمه سر مناسبه",
+    "createAccount": "انشاء حساب جديد",
+    "signUp": "تسجيل",
+    "addYourInformation": "مرحبا من فضلك ادخل بياناتك",
+    "fullName": "الاسم الكامل",
+    "alreadyHaveAccount": "لديك حساب بالفعل ؟",
+    "choseProduct": "اختر المنتج",
+    "onbaording1Des": "اكتشف مجموعة واسعة من العناصر المصممة خصيصا لتفضيلاتك. اعثر على ما تبحث عنه بالضبط",
+    "makePayment": "ادفع الان",
+    "onboardin2Des": "قم بإنهاء معاملاتك دون عناء من خلال خيارات الدفع الآمنة والمريحة لدينا. استمتع بالتسوق",
+    "getYourOrder": "تحصل على طلبك"
+   , "skip" : "تخطي"
+   , "next" : "التالي",
+   "onBoardingGetStarted" : "ابدء",
+   "prev": "السابق"
+
+
 }

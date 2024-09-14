@@ -22,12 +22,12 @@ class NextAndPrevPage extends StatelessWidget {
                 : CustomText(
                     index: bloc.index,
                     controller: bloc.controller,
-                    text: 'Prev',
+                    text: context.getText.prev,
                     nextPage: false,
                   ),
             SmoothPageIndicator(
               controller: bloc.controller,
-              count: bloc.pages.length,
+              count: bloc.pages(context).length,
               textDirection: TextDirection.ltr,
               effect: WormEffect(
                   dotColor: context.getColorTheme.textColor!,
@@ -38,7 +38,7 @@ class NextAndPrevPage extends StatelessWidget {
             CustomText(
               index: bloc.index,
               controller: bloc.controller,
-              text: 'Prev',
+              text: context.getText.prev,
             )
           ],
         );

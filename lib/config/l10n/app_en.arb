@@ -1,14 +1,25 @@
 {
     "language": "العربيه",
-    "login":"Login", 
-    "getStarted":"Welcome, Please Enter Your Email and get Started", 
-    "email":"Your Email", 
-    "password":"Password", 
-    "validEmail":"Please Enter A Valid Email", 
-    "passwordValid":"Enter password", 
-    "createAccount":"Create Account",
-    "signUp":"Sign Up", 
-    "addYourInformation":"Welcome, Please Add Your Information ",
- "fullName":"Full Name",
-"alreadyHaveAccount":"Already Have Account ?"
-}
+    "login": "Login",
+    "getStarted": "Hello, enter your account and get started",
+    "email": "Email",
+    "password": "Password",
+    "validEmail": "Please enter a valid account",
+    "passwordValid": "Enter a suitable password",
+    "createAccount": "Create a new account",
+    "signUp": "Sign Up",
+    "addYourInformation": "Hello, please enter your information",
+    "fullName": "Full Name",
+    "alreadyHaveAccount": "Already have an account?",
+    "choseProduct": "Choose a product",
+    "onbaording1Des": "Discover a wide range of items tailored to your preferences. Find exactly what you're looking for",
+    "makePayment": "Pay Now",
+    "onboardin2Des": "Complete your transactions effortlessly with our secure and convenient payment options. Enjoy shopping",
+    "getYourOrder": "Get your order",
+    "skip" : "Skip",
+    "next" : "Next",
+    "onBoardingGetStarted" : "Get Started",
+    "prev": "Prev"
+
+}   
+

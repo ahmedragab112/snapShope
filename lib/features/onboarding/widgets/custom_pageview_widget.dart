@@ -25,9 +25,9 @@ class CustomPageViewWidget extends StatelessWidget {
             physics: const BouncingScrollPhysics(),
             controller: bloc.controller,
             itemBuilder: (context, index) => PageViewBody(
-              data: bloc.pages[index] ,
+              data: bloc.pages(context)[index] ,
             ),
-            itemCount: bloc.pages.length,
+            itemCount: bloc.pages(context).length,
             onPageChanged: bloc.onPageChanged,
           ),
         ),
