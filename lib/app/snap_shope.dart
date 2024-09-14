@@ -42,10 +42,15 @@ class SnapShope extends StatelessWidget {
                   debugShowCheckedModeBanner: EnvVarables.ins.type,
                   navigatorKey: sl<GlobalKey<NavigatorState>>(),
                   builder: (context, widget) {
-                    return GestureDetector(
+                    return Builder(builder: (context) {
+                      ConactivityController.instance.init();
+
+                      return GestureDetector(
                         onTap: () =>
                             FocusManager.instance.primaryFocus!.unfocus(),
-                        child: widget!);
+                        child: widget!,
+                      );
+                    });
                   },
                   initialRoute: getInitRoute(),
                   onGenerateRoute: AppRouter.onGenerateRoutes,
