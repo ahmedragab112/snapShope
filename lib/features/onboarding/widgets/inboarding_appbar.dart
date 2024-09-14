@@ -41,7 +41,7 @@ class InBoardingAppBar extends StatelessWidget {
           context.pushReplacementNamed(AppRoutes.login);
         },
         child: Text(
-          AppStrings.skip,
+          context.getText.skip,
           style: AppTextSyle.font12Black.copyWith(
               fontSize: 20.sp, color: context.getColorTheme.bluePinkLight),
         ),

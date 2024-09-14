@@ -44,7 +44,6 @@ class SnapShope extends StatelessWidget {
                   builder: (context, widget) {
                     return Builder(builder: (context) {
                       ConactivityController.instance.init();
-
                       return GestureDetector(
                         onTap: () =>
                             FocusManager.instance.primaryFocus!.unfocus(),

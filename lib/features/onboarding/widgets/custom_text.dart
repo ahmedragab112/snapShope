@@ -31,13 +31,15 @@ class CustomText extends StatelessWidget {
           context.pushReplacementNamed(AppRoutes.login);
         }
       },
-      child: Text(
-        nextPage
-            ? index != 2
-                ? 'Next'
-                : 'Get Started'
-            : text,
-        style: Theme.of(context).textTheme.bodyMedium,
+      child: FittedBox(
+        child: Text(
+          nextPage
+              ? index != 2
+                  ? context.getText.next
+                  : context.getText.onBoardingGetStarted
+              : text,
+          style: Theme.of(context).textTheme.bodyMedium,
+        ),
       ),
     );
   }
